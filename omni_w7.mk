@@ -14,7 +14,14 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# Release name
+PRODUCT_RELEASE_NAME := w7
+
+$(call inherit-product, build/target/product/embedded.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/pb/config/common.mk)
+
 PRODUCT_DEVICE := w7
 PRODUCT_NAME := omni_w7
 PRODUCT_BRAND := lge
